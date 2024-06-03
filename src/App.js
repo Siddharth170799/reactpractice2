@@ -1,24 +1,41 @@
 import logo from './logo.svg';
 import './App.css';
+import { Button, Flex } from 'antd';
+import App1 from './SignIn';
+import Practice from './Practice';
+import useNotification from './useNotification';
+
 
 function App() {
+
+  const {NotificationComponent,triggerNotification}=useNotification("top-right")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+ 
+<>
+<h1>Hello World</h1>
+<button onClick={()=>triggerNotification({
+  type:"success",
+  message:"File sent successfully",
+  duration:3000,
+})}>Trigger Success</button>
+<button onClick={()=>triggerNotification({
+  type:"error",
+  message:"File sent failed",
+  duration:3000,
+})}>Trigger Error</button>
+<button onClick={()=>triggerNotification({
+  type:"warning",
+  message:"File sending in progress",
+  duration:3000,
+})}>Trigger warning</button>
+<button onClick={()=>triggerNotification({
+  type:"info",
+  message:"File information",
+  duration:3000,
+})}>Trigger info</button>
+{NotificationComponent}
+
+</>
   );
 }
 
