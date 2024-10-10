@@ -4,14 +4,17 @@ import { Button, Flex } from 'antd';
 import App1 from './SignIn';
 import Practice from './Practice';
 import useNotification from './useNotification';
+import Hello from './Hello';
+import Fetch from './Fetch';
 
 
 function App() {
 
   const {NotificationComponent,triggerNotification}=useNotification("top-right")
   return (
- 
-<>
+//  <Hello/>
+<Fetch/>
+/* <>
 <h1>Hello World</h1>
 <button onClick={()=>triggerNotification({
   type:"success",
@@ -35,8 +38,8 @@ function App() {
 })}>Trigger info</button>
 {NotificationComponent}
 
-</>
-  );
+</> */
+  )
 }
 
 export default App;
